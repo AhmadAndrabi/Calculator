@@ -19,6 +19,21 @@ body {
   }
 }
 
+@media (max-width: 450px) {
+  body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .papa {
+    margin-top: 100px;
+  }
+  .div-decription {
+    width: 200px;
+    font-size: 19px;
+  }
+}
+
 .div-description {
   display: flex;
   flex-direction: column;
