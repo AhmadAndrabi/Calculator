@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Syed Ahmad" />
+    <link rel="stylesheet" href="../styles/calculator.css" />
+    <title>Calculator</title>
+  </head>
+
+  <body>
+    <div class="div-description">
+      <h1 class="header-1">Description by Developer</h1>
+      <p class="des-para">
+        This is a calculator made by 3 conventional technologies used in such
+        projects - HTML, CSS, and JavaScript. It is a replica of IOS-Calculator.
+        Although it does not contain all the features of a typical
+        IOS-Calculator, it can perform basic arithmatic operations effectively.
+      </p>
+      <p class="des-para">
+        Moreover, the calculations remain saved in the 'local-storage.' So, even
+        if the page is closed or refreshed, the previous calculation will remain
+        unless cleared manually.
+      </p>
+    </div>
+
+    <div class="papa">
+      <div class="result-section">
+        <p class="cal-result-para"></p>
+      </div>
+
+      <hr class="hr-1" />
+
+      <div class="operate-section">
+        <p>
+          <button class="button-1" onclick="touch_Keys('1')">1</button>
+
+          <button class="button-2" onclick="touch_Keys('2')">2</button>
+
+          <button class="button-3" onclick="touch_Keys('3')">3</button>
+
+          <button class="button-yellow-add" onclick="touch_Keys(' + ')">
+            +
+          </button>
+        </p>
+
+        <p>
+          <button class="button-4" onclick="touch_Keys('4')">4</button>
+
+          <button class="button-5" onclick="touch_Keys('5')">5</button>
+
+          <button class="button-6" onclick="touch_Keys('6')">6</button>
+
+          <button class="button-yellow-subtract" onclick="touch_Keys(' - ')">
+            -
+          </button>
+        </p>
+
+        <p>
+          <button class="button-7" onclick="touch_Keys('7')">7</button>
+
+          <button class="button-8" onclick="touch_Keys('8')">8</button>
+
+          <button class="button-9" onclick="touch_Keys('9')">9</button>
+
+          <button class="button-yellow-x" onclick="touch_Keys(' * ')">*</button>
+        </p>
+
+        <p>
+          <button class="button-0" onclick="touch_Keys('0')">0</button>
+
+          <button class="button-dot" onclick="touch_Keys('.')">.</button>
+
+          <button
+            class="button-equal"
+            onclick="
+              calculation = eval(calculation);
+
+              displayCalResult();
+
+              localStorage.setItem('keys', calculation);
+            "
+          >
+            =
+          </button>
+
+          <button class="button-yellow-divide" onclick="touch_Keys(' / ')">
+            /
+          </button>
+        </p>
+
+        <button
+          class="button-clear"
+          onclick="
+            calculation = '';
+
+            displayCalResult();
+
+            localStorage.setItem('keys', calculation);
+          "
+        >
+          AC
+        </button>
+      </div>
+    </div>
+
+    <script src="../scripts/calculator.js"></script>
+  </body>
+</html>
