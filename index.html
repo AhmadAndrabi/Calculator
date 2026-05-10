@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Syed Ahmad" />
-    <link rel="stylesheet" href="calculator.css" />
+    <link rel="stylesheet" href="../styles/calculator.css" />
     <title>Calculator</title>
   </head>
 
@@ -63,7 +63,20 @@
 
           <button class="button-9" onclick="touch_Keys('9')">9</button>
 
-          <button class="button-yellow-x" onclick="touch_Keys(' * ')">*</button>
+          <button
+            class="button-yellow-x"
+            onclick="
+              if (!calculation) {
+                return;
+              } else if (calculation === ' + ' || calculation === ' - ') {
+                return;
+              } else {
+                touch_Keys(' * ');
+              }
+            "
+          >
+            *
+          </button>
         </p>
 
         <p>
@@ -75,7 +88,7 @@
             class="button-equal"
             onclick="
               if (!calculation) {
-                alert('Insert expression, genius!');
+                alert('Insert expression, genius.');
                 return;
               } else {
                 operate();
@@ -85,7 +98,18 @@
             =
           </button>
 
-          <button class="button-yellow-divide" onclick="touch_Keys(' / ')">
+          <button
+            class="button-yellow-divide"
+            onclick="
+              if (!calculation) {
+                return;
+              } else if (calculation === ' + ' || calculation === ' - ') {
+                return;
+              } else {
+                touch_Keys(' / ');
+              }
+            "
+          >
             /
           </button>
         </p>
@@ -105,6 +129,7 @@
       </div>
     </div>
 
-    <script src="calculator.js"></script>
+    <script src="../scripts/calculator.js"></script>
   </body>
 </html>
+
