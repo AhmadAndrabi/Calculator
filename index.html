@@ -74,11 +74,12 @@
           <button
             class="button-equal"
             onclick="
-              calculation = eval(calculation);
-
-              displayCalResult();
-
-              localStorage.setItem('keys', calculation);
+              if (!calculation) {
+                alert('Please insert an expression.');
+                return;
+              } else {
+                operate();
+              }
             "
           >
             =
