@@ -15,3 +15,10 @@ function displayCalResult() {
 } //Function displayCalResult ends here.
 
 displayCalResult();
+
+function operate() {
+  calculation = eval(calculation);
+  displayCalResult();
+
+  localStorage.setItem("keys", calculation);
+}
